@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 /**
  *
  * @author Colegio
+ * @version 2.0
  */
 @Service //Marcamos nuestra clase como servicio (en esta funcionalidad de seguridad)
 public class UserDetailsImpl implements UserDetailsService {

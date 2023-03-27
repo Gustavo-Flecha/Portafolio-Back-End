@@ -10,10 +10,12 @@ import org.springframework.stereotype.Service;
 
 /**
  * @author Colegio
+ * @version 2.0
  * @see "Aquí usamos la anotation
  * @link {@Transactional} para que cuando una operación falla esta anotation hace que
  * se mantenga en un estado anterior de modo que no impacte en la base de datos
  * y se nos complique todo"
+ * 
  */
 @Service //Marcamos que esta clase es de servicio
 @Transactional
@@ -25,9 +27,7 @@ public class RolService {
     public Optional<Rol> getByRolNombre(RolNombre rolNombre){
         return irolRepository.findByRolNombre(rolNombre);
     }
-    public void save (Rol rol){
+    public void save(Rol rol){
         irolRepository.save(rol);
     }
-    
-
 }

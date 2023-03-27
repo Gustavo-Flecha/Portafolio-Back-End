@@ -10,6 +10,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 /**
  * @author Colegio
  * @see "Esta clase es la encargada de tener toda la seguridad"
+ * @version 2.0
  */
 public class UsuarioPrincipal implements UserDetails {
 

@@ -1,6 +1,7 @@
 package com.ejemploII.SpringBoot.security.entity;
 
 import com.ejemploII.SpringBoot.security.enums.RolNombre;
+import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
@@ -12,7 +13,9 @@ import jakarta.validation.constraints.NotNull;
  *
  * @author Colegio
  * @see "Esta clase es para el token y el tema de la seguridad..."
+ * @version 2.0
  */
+@Entity
 public class Rol {
 
     @Id

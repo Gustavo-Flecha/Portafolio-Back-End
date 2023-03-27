@@ -16,7 +16,9 @@ import java.util.Set;
 /**
  * @see "Esta clase va a acceder directamente a la base de datos"
  * @author Colegio
+ * @version 2.0
  */
+
 @Entity
 public class Usuario {
 
@@ -43,10 +45,8 @@ public class Usuario {
     //Todo este código es para 
     //emparejar las tablas y que estén conectadas para que la info tenga consitencia y no se mezcle todo
     private Set<Rol> roles = new HashSet<>();
-    
-    
-    //Más constructores
 
+    //Más constructores
     public Usuario() {
     }
 
@@ -56,9 +56,8 @@ public class Usuario {
         this.email = email;
         this.password = password;
     }
-    
-    //Más Getters y Setters
 
+    //Más Getters y Setters
     public int getId() {
         return id;
     }
@@ -106,6 +105,5 @@ public class Usuario {
     public void setRoles(Set<Rol> roles) {
         this.roles = roles;
     }
-    
-    
+
 }
