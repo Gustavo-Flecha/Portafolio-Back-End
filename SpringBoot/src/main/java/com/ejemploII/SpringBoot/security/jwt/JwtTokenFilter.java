@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 /**
@@ -20,10 +21,12 @@ import org.springframework.web.filter.OncePerRequestFilter;
  * nuevo, por ejemplo cuando queremos modificar algo se va a ejecutar esta clase
  * primero y si no lo está nos va a pedir que nos loguemos"
  * @see {@link OncePerRequestFilter} nos realiza una petición por ves
+ * 
+ * @version 2.0
  */
 public class JwtTokenFilter extends OncePerRequestFilter {
 
-    @SuppressWarnings("FieldNameHidesFieldInSuperclass")//este parar que deje de mandarmen el warning
+   // @SuppressWarnings("FieldNameHidesFieldInSuperclass")este parar que deje de mandarmen el warning
     private final static Logger logger = LoggerFactory.getLogger(JwtProvider.class);
 
     @Autowired
@@ -32,7 +35,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
     UserDetailsImpl userDetailsServiceImpl;
 
     @Override
-    @SuppressWarnings("UseSpecificCatch")
+    //@SuppressWarnings("UseSpecificCatch")
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         try {
             String token = getToken(request);
@@ -43,7 +46,7 @@ public class JwtTokenFilter extends OncePerRequestFilter {
                         = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
                 SecurityContextHolder.getContext().setAuthentication(auth);
             }
-        } catch (Exception e) {
+        } catch (UsernameNotFoundException e) {//antes aquí era catch (Exception e) {
             logger.error("Falló el método doFilterInternal");
         }
         filterChain.doFilter(request, response);

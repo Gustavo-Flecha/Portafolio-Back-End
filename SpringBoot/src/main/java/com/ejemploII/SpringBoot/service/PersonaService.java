@@ -23,7 +23,6 @@ public class PersonaService implements IPersonaService {
      * estar creando un montón de instancias"
      */
     @Autowired
-
     public PersonaRepository persoRepo;
 
     /**

@@ -6,6 +6,8 @@ import jakarta.validation.constraints.NotBlank;
 /**
  * @author Colegio
  * @see "Esta clase va a ser para nuetro login"
+ * 
+ * @version 2.0
  */
 public class LoginUsuario {
     @NotBlank //Esto es para impedir que estén vacíos
@@ -21,11 +23,11 @@ public class LoginUsuario {
 
     public void setNombreUsuario(String nombreUsuario) {
         this.nombreUsuario = nombreUsuario;
-    }
+    }                        
 
     public String getPassword() {
         return password;
-    }
+    }         
 
     public void setPassword(String password) {
         this.password = password;

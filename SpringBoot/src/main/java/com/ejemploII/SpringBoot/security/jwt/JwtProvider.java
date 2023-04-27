@@ -17,6 +17,8 @@ import org.springframework.stereotype.Component;
 /**
  * @author Colegio Esta clase genera el token y tiene métodos de validación para
  * ver si está bien armado
+ * 
+ * @version 2.0
  */
 @Component
 public class JwtProvider {
@@ -48,8 +50,13 @@ public class JwtProvider {
         return Jwts.parser().setSigningKey(secret)
                 .parseClaimsJws(token).getBody().getSubject();
     }
+    
+    
+    public void token(String token){
+        System.out.println("Valor del token: " + token);
+    }
 
-    public boolean validateToken(String token) {
+    public boolean validateToken(String token) {//validador del token
         try {
             Jwts.parser().setSigningKey(secret).parseClaimsJws(token);
             return true;

@@ -6,6 +6,8 @@ import org.springframework.security.core.GrantedAuthority;
 /**
  *
  * @author Colegio
+ * 
+ * @version 2.0
  */
 public class JwtDto {
     private String token;
@@ -55,7 +57,4 @@ public class JwtDto {
     public void setAuthorities(Collection<? extends GrantedAuthority> authorities) {
         this.authorities = authorities;
     }
-    
-    
-    
 }

@@ -14,16 +14,26 @@ import org.springframework.stereotype.Component;
  * @author Colegio 
  * @see "Esta clase va a chequear si hay un toquen válido"
  *
+ * @version 2.0
  */
 @Component
 public class JwtEntryPoint implements AuthenticationEntryPoint {
 
-    private final static Logger logger = LoggerFactory.getLogger(JwtEntryPoint.class);
+    /**
+     *
+     * @param request
+     * @return
+     */
 
+    private final static Logger logger = LoggerFactory.getLogger(JwtEntryPoint.class);
+    
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response,
             AuthenticationException authException) throws IOException, ServletException {
-        logger.error("Falló el método cemmence");
+        //HttpServletRequest token = getToken(request);
+        //System.out.println("Valor del token: " + token);
+        logger.error("Fallo el metodo commence, osea el toquen no te deja acceder");
         response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
     }
+    
 }

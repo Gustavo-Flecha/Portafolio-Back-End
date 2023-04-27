@@ -30,8 +30,8 @@ public class Controller {
 
     private IPersonaService persoServ;
 
-    @PreAuthorize("hasRole('ADMIN')")
-    @PostMapping("/new/persona") //2:21:50
+    //@PreAuthorize("hasRole('ADMIN')")
+    @PostMapping("/new/persona") 
     //Con @RequestBody mandamos los datos del front al back
     public void agregarPersona(@RequestBody Persona per) {
         persoServ.crearPersona(per);
@@ -47,7 +47,7 @@ public class Controller {
     public void modificarPersona(@PathVariable Long id, @RequestBody Persona per) {
         persoServ.modificarPersona(per);
     }
-    @PreAuthorize("hasRole('ADMIN')")
+    //@PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("/delete/{id}")
     public void borarPersona(@PathVariable Long id) {
         persoServ.borrarPersona(id);

@@ -7,6 +7,8 @@ import java.util.Set;
  * @author Colegio
  * @see "En esta clase están todos los campos para que se pueda dar de alta a un
  * nuevo usuario"
+ * 
+ * @version 2.0
  */
 public class NuevoUsuario {
 
