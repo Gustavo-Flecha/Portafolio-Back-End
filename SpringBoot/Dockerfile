@@ -4,6 +4,6 @@
 
 FROM amazoncorretto:11-alpine-jdk
 
-COPY SpringBoot-0.0.1-SNAPSHOT.jar APIBackend.jar
+COPY target/SpringBoot-0.0.1-SNAPSHOT.jar APIBackend.jar
 
 ENTRYPOINT ["java","-jar","/APIBackend.jar"]
